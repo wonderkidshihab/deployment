@@ -5,4 +5,7 @@ from .models import Blog
 def index(request):
     blogs = Blog.objects.all()
     return render(request, 'theme/index.html', {'blogs': blogs})
+def blog(request, pk):
+    blog = Blog.objects.get(id=pk)
+    return render(request, 'theme/blog.html', {'blog': blog})
 
