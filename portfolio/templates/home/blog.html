@@ -1,0 +1,35 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shihab Uddin | Flutter Dev</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% tailwind_css %}
+  </head>
+
+  <body class="bg-white font-mono leading-normal tracking-normal">
+    <!-- HEADER -->
+    {% include 'corewidgets/header.html' %}
+    <!-- END HEADER -->
+    <section>
+      <div>
+        <img src="{{blog.image.url}}" class="h-10" />
+      </div>
+    </section>
+
+    {% include 'corewidgets/footer.html' %}
+  </body>
+  <script>
+    // shows #navbar element
+    toggleCollapse("navbar");
+
+    // hides #navbar element
+    toggleCollapse("navbar", false);
+
+    // also shows #navbar element
+    toggleCollapse("navbar", true);
+  </script>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+</html>
