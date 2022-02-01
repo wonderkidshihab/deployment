@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Blog
+from .models import *
 
 # Create your views here.
 def index(request):
@@ -9,3 +9,6 @@ def blog(request, pk):
     blog = Blog.objects.get(id=pk)
     return render(request, 'theme/blog.html', {'blog': blog})
 
+def category(request, pk):
+    category = Category.objects.get(id=pk)
+    return render(request, 'theme/category.html', {'category': category})

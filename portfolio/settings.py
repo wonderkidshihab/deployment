@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'tailwind',
     'templates',
     'django_browser_reload',
+    'ckeditor',
+    'geeks',
 
 ]
 
