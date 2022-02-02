@@ -19,4 +19,4 @@ jobs:
           server: ftp.shihabuddin.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /portfolio/
+          server-dir: /deploy/
