@@ -9,63 +9,34 @@
       Portfolios
     </h1>
     <div class="grid sm:grid-cols-3 grid-cols-1 gap-4">
-      <a href="#">
-        <div
-          class="w-full h-80 rounded-lg bg-[url('https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')] bg-cover bg-center"
+      {% for portfolio in portfolios %}
+      <div href="#">
+        <img
+          class=" rounded-lg bg-cover bg-center h-fit"
+          src="{{ portfolio.image.url }}"
         >
           <div
-            class="flex justify-center items-center h-full text-slate-600 hover:text-white opacity-0 hover:opacity-100 hover:bg-slate-400 hover:rounded-lg transition-opacity duration-300"
+            class="flex justify-center items-center text-slate-600  hover:rounded-lg"
           >
             <div class="w-full my-auto">
               <div class="flex flex-col justify-center items-center px-10">
-                <h1 class="text-center text-3xl font-bold">Portfolio 1</h1>
-                <p class="text-center text-xl font-bold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, quidem.
-                </p>
+                <h1 class="text-center text-3xl font-bold my-3">
+                  {{portfolio.title}}
+                </h1>
+                <div class="flex flex-row">
+                  
+                {% for tech in portfolio.listOfTechnologies.all %}
+                <span class="text-center text-sm font-bold py-1 px-2 m-1 bg-blue-700 text-white rounded-md">
+                  {{tech.name}}
+                </span>
+                {% endfor %}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </a>
-      <a href="#">
-        <div
-          class="w-full h-80 rounded-lg bg-[url('https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')] bg-cover bg-center"
-        >
-          <div
-            class="flex justify-center items-center h-full text-slate-600 hover:text-white opacity-0 hover:opacity-100 hover:bg-slate-400 hover:rounded-lg transition-opacity duration-300"
-          >
-            <div class="w-full my-auto">
-              <div class="flex flex-col justify-center items-center px-10">
-                <h1 class="text-center text-3xl font-bold">Portfolio 2</h1>
-                <p class="text-center text-xl font-bold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, quidem.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="#">
-        <div
-          class="w-full h-80 rounded-lg bg-[url('https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')] bg-cover bg-center"
-        >
-          <div
-            class="flex justify-center items-center h-full text-slate-600 hover:text-white opacity-0 hover:opacity-100 hover:bg-slate-400 hover:rounded-lg transition-opacity duration-300"
-          >
-            <div class="w-full my-auto">
-              <div class="flex flex-col justify-center items-center px-10">
-                <h1 class="text-center text-3xl font-bold">Portfolio 3</h1>
-                <p class="text-center text-xl font-bold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, quidem.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
+        </img>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

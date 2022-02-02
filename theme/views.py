@@ -4,7 +4,8 @@ from .models import *
 # Create your views here.
 def index(request):
     blogs = Blog.objects.all()
-    return render(request, 'theme/index.html', {'blogs': blogs})
+    portfolios = Portfolio.objects.all()
+    return render(request, 'theme/index.html', {'blogs': blogs, 'portfolios': portfolios})
 def blog(request, pk):
     blog = Blog.objects.get(id=pk)
     return render(request, 'theme/blog.html', {'blog': blog})

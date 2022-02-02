@@ -41,6 +41,7 @@ class Portfolio(models.Model):
     isIOSApp = models.BooleanField(default=False)
     isFlutterApp = models.BooleanField(default=False)
     isWebsite = models.BooleanField(default=False)
+    listOfTechnologies = models.ManyToManyField('Technology', related_name='portfolios')
     playStoreLink = models.URLField(null=True)
     appStoreLink = models.URLField(null=True)
     websiteLink = models.URLField(null=True)
@@ -50,6 +51,13 @@ class Portfolio(models.Model):
     def __str__(self):
         return self.title
 class PortfolioCategory(models.Model):
+    name = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.name
+class Technology(models.Model):
     name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
