@@ -58,3 +58,8 @@ class CreateCommentByBlogSerializer(generics.CreateAPIView):
     def perform_create(self, serializer):
         blog_id = self.kwargs['blog_id']
         serializer.save(blog_id=blog_id)
+        
+
+
+        
+
