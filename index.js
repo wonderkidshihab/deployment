@@ -7,6 +7,9 @@ const cors = require('cors');
 app.use(bodyParser.json());
 app.use(cors());
 
+// static files
+app.use(express.static('dist'));
+
 
 
 
