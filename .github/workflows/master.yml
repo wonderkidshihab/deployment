@@ -4,6 +4,7 @@ on:
       - master
       - main
       - newportfolio
+      - node
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
