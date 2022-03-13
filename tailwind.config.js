@@ -1,7 +1,11 @@
 module.exports = {
-  content: ["./dist/**/*.{html,js}"],
+  content: ["./views/*.{ejs}", "./views/widgets/*.{ejs}"],
+
   theme: {
-    extend: {},
+    extend: {
+
+    },
+
   },
   plugins: [],
 }

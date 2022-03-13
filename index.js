@@ -2,20 +2,21 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const nunjucks = require('nunjucks');
 
 
 app.use(bodyParser.json());
 app.use(cors());
 
-// static files
-app.use(express.static('dist'));
+app.set('view engine', 'ejs');
 
+app.use(express.static('views'));
 
 
 
 
 app.get('/', (req, res) => {
-    res.sendFile('./dist/index.html', { root: __dirname });
+    res.render('index');
 });
 
 
