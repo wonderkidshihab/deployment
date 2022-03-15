@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon index.js --watch",
-    "build:css": "postcss ./src/input.css -o ./views/output.css"
+    "serve": "nodemon index.js --watch views --watch",
+    "build:css": "postcss ./src/input.css -o ./views/output.css",
+    "tailwindcss": "tailwindcss -i src/input.css -o views/output.css --watch"
   },
   "repository": {
     "type": "git",
