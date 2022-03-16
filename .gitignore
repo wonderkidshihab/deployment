@@ -1,2 +1,2 @@
-templates/static_src/node_modules/
-venv/
+node_modules/
+package-lock.json
