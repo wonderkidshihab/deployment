@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const nunjucks = require('nunjucks');
+const adminRoutes = require('./routes/adminRoutes');
 
 
 app.use(bodyParser.json());
@@ -19,9 +19,11 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.use('/admin', adminRoutes);
 
 
-app.listen(process.env.PORT || 5000, () => {
+
+app.listen(process.env.PORT || 3000, () => {
     console.log('Server started on port 5000');
 });
 
